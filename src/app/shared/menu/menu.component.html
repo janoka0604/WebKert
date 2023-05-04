@@ -1,0 +1,7 @@
+<nav>
+    <ul>
+      <li [ngClass]="{ 'active': activeRoute === 'main' }"><a routerLink="/main">Főoldal</a></li>
+      <li [ngClass]="{ 'active': activeRoute === 'products' }"><a routerLink="/products">Termékek</a></li>
+      <li [ngClass]="{ 'active': activeRoute === 'contacts' }"><a routerLink="/contacts">Elérhetőségek</a></li>
+    </ul>
+  </nav>
