@@ -2,9 +2,11 @@
   <button class='button-icon' mat-icon-button (click)="sidenav.toggle()">
     <mat-icon>menu</mat-icon>
   </button>
-  <span class="toolbar-title">VrummVrummShop</span>
+  <div class="menu-spacer"></div>
+  <span class="toolbar-title"> CarShop</span>
   <div class="clock-section" mat-toolbar-section-end>
     <mat-icon>access_time</mat-icon>
+    <span class="clock-spacer"></span>
     <span>{{ currentTime | date: 'HH:mm:ss' }}</span>
   </div>
 </mat-toolbar>
@@ -15,10 +17,22 @@
       <a><mat-icon [ngStyle]="{'color':'black'}">keyboard_backspace</mat-icon></a>
     </button>
     <mat-nav-list>
-      <a mat-list-item routerLink="/main" routerLinkActive="active">Főoldal</a>
-      <a mat-list-item routerLink="/products" routerLinkActive="active">Termékek</a>
-      <a mat-list-item routerLink="/contacts" routerLinkActive="active">Elérhetőség</a>
-      <a mat-list-item routerLink="/login" routerLinkActive="active">Bejelentkezés</a>
+      <a mat-list-item routerLink="/main" routerLinkActive="active"  class="centered" (click)="sidenav.close()">
+        <mat-icon>home</mat-icon>
+        <span>Főoldal</span>
+      </a>
+      <a mat-list-item routerLink="/products" routerLinkActive="active"  class="centered" (click)="sidenav.close()">
+        <mat-icon>store</mat-icon>
+        <span>Termékek</span>
+      </a>
+      <a mat-list-item routerLink="/contacts" routerLinkActive="active"  class="centered" (click)="sidenav.close()">
+        <mat-icon>phone</mat-icon>
+        <span>Elérhetőségek</span>
+      </a>
+      <a mat-list-item routerLink="/login" routerLinkActive="active" class="centered" (click)="sidenav.close()">
+        <mat-icon>login</mat-icon>
+        <span>Bejelentkezés</span>
+      </a>
     </mat-nav-list>
   </mat-sidenav>
 </mat-sidenav-container>
