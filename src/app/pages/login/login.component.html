@@ -1,1 +1,14 @@
-<p>login works!</p>
+<div class="main_component">
+    <div class="break">
+        <h1>Üdvözlöm a bejelentkező oldalon!</h1>
+        <span>Adja meg alább a bejelentkezési adatait:</span>
+    </div>
+    <mat-form-field>
+        <mat-label for="email">Email: </mat-label><input matInput type="text"/>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label for="password">Jelszó: </mat-label><input matInput type="password"/>
+    </mat-form-field>
+    <span class="button" class="break"><button mat-raised-button color="primary" >Bejelentkezés</button></span>
+    <p>Nincs még felhasználói fiókod? <a routerLink="/signup" >Regisztrálj</a></p>
+</div>
