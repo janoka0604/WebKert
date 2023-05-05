@@ -1,12 +1,8 @@
 $hoverColor : #555;
 $navColor : #333;
 
-body{
-  font-family: 'Trebuchet MS', sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: white;
-}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 nav {
     background-color: $navColor;
@@ -48,5 +44,33 @@ nav {
     background-color: $hoverColor;
   }
 
+  .welcome-message{
+    display: flex;
+    justify-content: center;
+    padding-top: 5vh;
+  }
 
+  .menu-name{
+    display: flex;
+    justify-content: center;
+  }
+ 
+  .button-icon{
+    background-color: transparent;
+    border: none;
+  }
+
+  .clock-section {
+    display: flex;
+    align-items: center;
+  }
   
+  .toolbar-title {
+    flex: 1;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  html, body { height: 100%; }
+  body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

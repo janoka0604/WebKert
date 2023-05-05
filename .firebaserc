@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "webkert-18f95": {
+      "hosting": {
+        "WebKert": [
+          "webkert-18f95"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "webkert-18f95"
+  }
+}

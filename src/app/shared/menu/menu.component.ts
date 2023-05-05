@@ -8,13 +8,18 @@ import { Router } from '@angular/router';
 })
 export class MenuComponent {
   activeRoute: string='';
+  currentTime = new Date();
   
   constructor(private router: Router) {}
-
+  
   ngOnInit() {
     this.router.events.subscribe(() => {
       this.setActiveRoute();
     });
+    
+    setInterval(() => {
+      this.currentTime = new Date();
+    }, 1000);
   }
 
   setActiveRoute() {

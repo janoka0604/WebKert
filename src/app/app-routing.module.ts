@@ -6,6 +6,8 @@ const routes: Routes = [
   { path: 'contacts', loadChildren: () => import('./pages/contacts/contacts.module').then(m => m.ContactsModule) },
   { path: 'products', loadChildren: () => import('./pages/products/products.module').then(m => m.ProductsModule) },
   { path: 'main', loadChildren: () => import('./pages/main/main.module').then(m => m.MainModule) },
+  { path: 'login', loadChildren: () => import('./pages/login/login.module').then(m => m.LoginModule) },
+  { path: 'signup', loadChildren: () => import('./pages/signup/signup.module').then(m => m.SignupModule) },
   { path: '', redirectTo: '/main', pathMatch: 'full'},
   { path: '**', redirectTo: '/not-found'}
 ];

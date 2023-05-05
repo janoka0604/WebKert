@@ -1,7 +1,24 @@
-<nav>
-    <ul>
-      <li [ngClass]="{ 'active': activeRoute === 'main' }"><a routerLink="/main">Főoldal</a></li>
-      <li [ngClass]="{ 'active': activeRoute === 'products' }"><a routerLink="/products">Termékek</a></li>
-      <li [ngClass]="{ 'active': activeRoute === 'contacts' }"><a routerLink="/contacts">Elérhetőségek</a></li>
-    </ul>
-  </nav>
+<mat-toolbar color="primary">
+  <button class='button-icon' mat-icon-button (click)="sidenav.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span class="toolbar-title">VrummVrummShop</span>
+  <div class="clock-section" mat-toolbar-section-end>
+    <mat-icon>access_time</mat-icon>
+    <span>{{ currentTime | date: 'HH:mm:ss' }}</span>
+  </div>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="over" opened="false" fixedInViewport="true">
+    <button class='button-icon' mat-icon-button (click)="sidenav.close()">
+      <a><mat-icon [ngStyle]="{'color':'black'}">keyboard_backspace</mat-icon></a>
+    </button>
+    <mat-nav-list>
+      <a mat-list-item routerLink="/main" routerLinkActive="active">Főoldal</a>
+      <a mat-list-item routerLink="/products" routerLinkActive="active">Termékek</a>
+      <a mat-list-item routerLink="/contacts" routerLinkActive="active">Elérhetőség</a>
+      <a mat-list-item routerLink="/login" routerLinkActive="active">Bejelentkezés</a>
+    </mat-nav-list>
+  </mat-sidenav>
+</mat-sidenav-container>
