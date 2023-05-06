@@ -1,0 +1,36 @@
+mat-card {
+    width: 30%;
+    height: 30%;
+    align-self: center;
+    background-color: whitesmoke;
+}
+
+mat-card-header {
+    display: initial;
+}
+
+.div-flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    height: 30%;
+}
+
+.main_component {
+    height: 100vh;
+}
+
+.icon-text-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .icon-text-container .material-icons {
+    margin-right: 5px;
+  }
+
+  .break{
+    margin-bottom: 20px;
+  }

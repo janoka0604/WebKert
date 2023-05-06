@@ -18,20 +18,28 @@
     </button>
     <mat-nav-list>
       <a mat-list-item routerLink="/main" routerLinkActive="active"  class="centered" (click)="sidenav.close()">
-        <mat-icon>home</mat-icon>
-        <span>Főoldal</span>
+        <div class="icon-text-container">
+          <mat-icon>home</mat-icon>
+          <span class="text">Főoldal</span>
+        </div>
       </a>
       <a mat-list-item routerLink="/products" routerLinkActive="active"  class="centered" (click)="sidenav.close()">
-        <mat-icon>store</mat-icon>
-        <span>Termékek</span>
+        <div class="icon-text-container">
+          <mat-icon>store</mat-icon>
+          <span class="text">Termékek</span>
+        </div>
       </a>
       <a mat-list-item routerLink="/contacts" routerLinkActive="active"  class="centered" (click)="sidenav.close()">
-        <mat-icon>phone</mat-icon>
-        <span>Elérhetőségek</span>
+        <div class="icon-text-container">
+          <mat-icon>phone</mat-icon>
+          <span class="text">Elérhetőségek</span>
+        </div>
       </a>
       <a mat-list-item routerLink="/login" routerLinkActive="active" class="centered" (click)="sidenav.close()">
-        <mat-icon>login</mat-icon>
-        <span>Bejelentkezés</span>
+        <div class="icon-text-container">
+          <mat-icon>login</mat-icon>
+          <span class="text">Bejelentkezés</span>
+        </div>
       </a>
     </mat-nav-list>
   </mat-sidenav>

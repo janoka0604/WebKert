@@ -5,7 +5,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MenuComponent } from './shared/menu/menu.component';
-import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
@@ -15,7 +14,7 @@ import { AngularFireModule } from '@angular/fire/compat';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatNativeDateModule} from '@angular/material/core';
-import { MatToolbarModule, MatToolbarRow} from '@angular/material/toolbar'
+import { MatToolbarModule } from '@angular/material/toolbar'
 import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
@@ -28,7 +27,7 @@ import { MatListModule } from '@angular/material/list';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AngularFireModule,
+    AngularFireModule.initializeApp(environment.firebase),
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
