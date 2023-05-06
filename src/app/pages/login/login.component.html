@@ -12,6 +12,7 @@
             <mat-label for="password">Jelszó: </mat-label>
             <input matInput type="password" formControlName="password"/>
         </mat-form-field>
+        <mat-error *ngIf="errorMessage" class="break"> {{ errorMessage }} </mat-error>
         <span class="button" class="break"><button mat-raised-button color="primary">Bejelentkezés</button></span>
         <p>Nincs még felhasználói fiókod? <a [routerLink]="'/signup'" >Regisztrálj</a></p>
     </form>
