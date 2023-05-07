@@ -23,7 +23,7 @@
           <span class="text">Főoldal</span>
         </div>
       </a>
-      <a mat-list-item routerLink="/products" routerLinkActive="active"  class="centered" (click)="sidenav.close()">
+      <a *ngIf="(loggedInUser)" mat-list-item routerLink="/products" routerLinkActive="active"  class="centered" (click)="sidenav.close()">
         <div class="icon-text-container">
           <mat-icon>store</mat-icon>
           <span class="text">Termékek</span>
@@ -35,10 +35,22 @@
           <span class="text">Elérhetőségek</span>
         </div>
       </a>
-      <a mat-list-item routerLink="/login" routerLinkActive="active" class="centered" (click)="sidenav.close()">
+      <a *ngIf="(loggedInUser)" mat-list-item routerLink="/reviews" routerLinkActive="active" class="centered" (click)="sidenav.close()">
+        <div class="icon-text-container">
+          <mat-icon>reviews</mat-icon>
+          <span class="text">Vélemények</span>
+        </div>
+      </a>
+      <a *ngIf="!(loggedInUser)" mat-list-item routerLink="/login" routerLinkActive="active" class="centered" (click)="sidenav.close()">
         <div class="icon-text-container">
           <mat-icon>login</mat-icon>
           <span class="text">Bejelentkezés</span>
+        </div>
+      </a>
+      <a *ngIf="loggedInUser" mat-list-item routerLink="/main" routerLinkActive="active" class="centered" (click)="logOut()" (click)="sidenav.close()">
+        <div class="icon-text-container">
+          <mat-icon>logout</mat-icon>
+          <span class="text">Kijelentkezés</span>
         </div>
       </a>
     </mat-nav-list>
