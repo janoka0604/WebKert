@@ -17,7 +17,6 @@ export class MenuComponent implements OnInit{
       this.currentTime = new Date();
     }, 1000);
     this.authService.isUserLoggedIn().subscribe(user =>{
-      console.log(user)
       this.loggedInUser=user;
       localStorage.setItem('user', JSON.stringify(this.loggedInUser));
     }, error =>{
@@ -28,7 +27,6 @@ export class MenuComponent implements OnInit{
 
   logOut(){
     this.authService.logout().then(() =>{
-      console.log("Kijelentkezve")
     }).catch((error) =>{
       console.error(error);
     });
