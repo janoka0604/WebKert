@@ -1,0 +1,19 @@
+div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+}
+
+.main-components table {
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: auto;
+    margin: 10px 0;
+  }
+  
+  .main-components td, .main-components th {
+    border: 1px solid black;
+    padding: 5px;
+  }

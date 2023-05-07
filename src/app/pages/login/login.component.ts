@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../../shared/services/auth.service';
 import { FirebaseError } from '@angular/fire/app';
+import { getAuth, signInWithEmailAndPassword} from '@angular/fire/auth'
 
 @Component({
   selector: 'app-login',
@@ -26,13 +27,14 @@ export class LoginComponent implements OnInit {
   }
 
   async login() {
-    try {
-      this.loading = true;
-      const email = this.loginForm.value.email;
-      const password = this.loginForm.value.password;
-      await this.authService.login(email, password);
-      this.router.navigateByUrl('/main')
-    } catch(error){
+    this.loading=true;
+    const auth=getAuth();
+    const email = this.loginForm.value.email;
+    const password = this.loginForm.value.password;
+    signInWithEmailAndPassword(auth,email,password).then(cred =>{
+      this.loading=false;
+      this.router.navigateByUrl('/main');
+    }).catch(error =>{
       this.errorCode=(error as FirebaseError).code;
       if(this.errorCode === 'auth/invalid-email'){
         this.errorMessage="Az email formátuma nem megfelelő"
@@ -44,11 +46,8 @@ export class LoginComponent implements OnInit {
       else{
         this.errorMessage="Váratlan hiba"
       }
-    }
-
-    finally {
-      this.loading = false;
-    }
+    })
+    this.loading=false;
   }
 
 }

@@ -1,1 +1,18 @@
-<p>reviews works!</p>
+<div class="main-components">
+    <div style="width: 80%; margin: 0 auto;">
+      <table style="border: 1px solid black; border-collapse: collapse; width: 100%; max-width: 100%; margin: 10px 0;">
+        <thead>
+          <tr>
+            <th>Név</th>
+            <th>Csillagok</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of items">
+            <td style="border: 1px solid black; padding: 5px;">{{ item.name }}</td>
+            <td style="border: 1px solid black; padding: 5px;"> {{ item.star }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

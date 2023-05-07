@@ -1,1 +1,14 @@
-<p>products works!</p>
+<div class="main-component">
+    <div class="product-list">
+        <div *ngFor="let product of products">
+            <div class="product-image">
+                <img src="assets/alkatreszek/{{product.pictureID}}">
+            </div>
+            <h2>{{ product.productName }}</h2>
+            <p>{{ product.productPrice }} Ft</p>
+            <span class="button" class="break"><button mat-raised-button color="primary"(orderClick)="onOrderClick()" >Vásárlás</button></span>
+        </div>
+    </div>
+    <mat-error *ngIf="errorMessage" class="break"> {{ errorMessage }} </mat-error>
+</div>
+
